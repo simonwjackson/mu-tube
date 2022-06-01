@@ -1,0 +1,5 @@
+{
+    "name": "cli",
+    "main": "index.js",
+    "license": "MIT"
+}

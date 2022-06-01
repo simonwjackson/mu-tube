@@ -1,0 +1,5 @@
+{
+    "name": "db",
+    "license": "MIT",
+    "main": "index.js"
+}

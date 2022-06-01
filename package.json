@@ -1,0 +1,23 @@
+{
+    "name": "mu-tube",
+    "version": "0.0.0",
+    "license": "MIT",
+    "private": true,
+    "main": "index.js",
+    "type": "module",
+    "devDependencies": {
+        "@types/jest": "^27.5.2",
+        "@types/node": "^18.0.0",
+        "@types/yaml": "^1.9.7",
+        "jest": "^28.1.0",
+        "nx": "^14.3.6",
+        "ts-jest": "^28.0.3",
+        "ts-node": "^10.8.1",
+        "typescript": "~4.6.2"
+    },
+    "dependencies": {
+        "lowdb": "^3.0.0",
+        "yaml": "^2.1.1",
+        "yargs": "^17.5.1"
+    }
+}

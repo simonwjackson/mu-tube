@@ -1,0 +1,6 @@
+{
+    "workspaceLayout": {
+        "appsDir": "packages",
+        "libsDir": "packages"
+    }
+}
