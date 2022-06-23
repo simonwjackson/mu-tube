@@ -2,5 +2,8 @@
     "workspaceLayout": {
         "appsDir": "packages",
         "libsDir": "packages"
+    },
+    "tasksRunnerOptions": {
+        "default": {}
     }
 }

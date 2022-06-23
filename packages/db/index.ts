@@ -1,8 +1,6 @@
 import { Low, TextFile } from 'lowdb'
 import YAML from 'yaml'
 
-
-
 export class YAMLFile {
   constructor(filename: string) {
     // @ts-ignore: this.adapter exists
