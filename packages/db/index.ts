@@ -1,12 +1,16 @@
 import { Low, TextFile } from 'lowdb'
 import YAML from 'yaml'
 
-class YAMLFile {
+
+
+export class YAMLFile {
   constructor(filename: string) {
+    // @ts-ignore: this.adapter exists
     this.adapter = new TextFile(filename)
   }
 
   async read() {
+    // @ts-ignore: this.adapter exists
     const data = await this.adapter.read()
     if (data === null) {
       return []
@@ -16,20 +20,17 @@ class YAMLFile {
     }
   }
 
-  write(obj) {
+  write(obj: any) {
+    // @ts-ignore: this.adapter exists
     return this.adapter.write(YAML.stringify(obj))
   }
 }
 
-const adapter = new YAMLFile('file.yaml')
-const db = new Low(adapter)
+export default async (path: string) => {
+  const adapter = new YAMLFile(path)
+  const db = new Low(adapter)
+  await db.read()
+  db.data ||=  [] 
 
-await db.read()
-
-db.data ||=  [] 
-
-// db.data.push([{ title }])
- 
-// db.write()
-
-export default db
+  return db
+}

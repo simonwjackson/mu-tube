@@ -1,13 +1,12 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
-    "sourceRoot": "packages/storybook/design-system/src",
+    "sourceRoot": "packages/cli",
     "targets": {
-        "run": {
+        "serve": {
             "executor": "nx:run-commands",
             "options": {
-                "cwd": "packages/storybook/design-system",
-                "command": "ls"
+                "command": "node --experimental-specifier-resolution=node --loader ./loader.js index.ts"
             }
         }
     }

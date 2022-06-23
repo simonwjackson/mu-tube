@@ -1,5 +1,6 @@
 {
     "name": "cli",
-    "main": "index.js",
+    "exports": "./index.js",
+    "type": "module",
     "license": "MIT"
 }
