@@ -63,6 +63,7 @@ pkgs.mkShell {
     yarn
     git
     youtube-dl
+    bats
   ] ++ osCypressInputs;
 
   shellHook = ''
@@ -71,6 +72,7 @@ pkgs.mkShell {
     ${osShellHook}
 
     yarn install
+    nx reset
   '';
 }
 
