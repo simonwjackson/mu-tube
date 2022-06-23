@@ -2,11 +2,27 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
     "sourceRoot": "packages/cli",
+    "name": "cli",
     "targets": {
-        "serve": {
+        "build": {
             "executor": "nx:run-commands",
             "options": {
-                "command": "node --experimental-specifier-resolution=node --loader ./loader.js index.ts"
+                "cwd": "packages/cli",
+                "command": "tsc --project ."
+            }
+        },
+        "run": {
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "packages/cli",
+                "command": "./mutube"
+            }
+        },
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "packages/cli",
+                "command": "./test.sh"
             }
         }
     }

@@ -1,1 +1,22 @@
-{}
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "packages/db",
+    "name": "db",
+    "targets": {
+        "build": {
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "packages/db",
+                "command": "tsc --project ."
+            }
+        },
+        "run": {
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "packages/db",
+                "command": "node --experimental-specifier-resolution=node --loader ./loader.js index.ts"
+            }
+        }
+    }
+}
