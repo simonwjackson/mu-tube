@@ -1,6 +1,8 @@
 import yargs, {Arguments} from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import getDb from '@/db'
+import { cwd } from 'process'
+import { resolve } from 'path'
 
 const yarg = yargs(hideBin(process.argv))
 
@@ -22,7 +24,7 @@ yarg.command({
       }
     },
     async handler(argv: MyArgs) {
-      const db = await getDb(argv.path)
+      const db = await getDb(resolve(cwd(), argv.path))
       // @ts-ignore
       console.log(db.data)
     }

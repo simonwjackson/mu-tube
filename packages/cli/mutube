@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-node \
-    --experimental-specifier-resolution=node \
-    --loader ./loader.js \
-    index.ts $*
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+export NODE_OPTIONS="--no-warnings --experimental-specifier-resolution=node --experimental-loader ${script_dir}/../../loader.js"
+export TS_NODE_PROJECT="${script_dir}/tsconfig.json"
+
+node "${script_dir}/index.ts" $*

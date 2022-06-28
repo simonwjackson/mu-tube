@@ -1,22 +1,22 @@
 {
+    "extends": "@tsconfig/node18/tsconfig.json",
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "outDir": "dist",
-        "sourceMap": false,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
         "baseUrl": "./packages",
+        "module": "ES2022",
+        "outDir": "dist",
         "paths": {
             "@/*": [
                 "*"
             ]
-        }
+        },
+        "strict": false
     },
-    "include": [
-        "packages/**/*.ts"
-    ],
     "exclude": [
-        "node_modules",
-        ".vscode"
+        "node_modules"
+    ],
+    "include": [
+        "packages/**/*"
     ]
 }

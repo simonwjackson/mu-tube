@@ -14,15 +14,13 @@
         "run": {
             "executor": "nx:run-commands",
             "options": {
-                "cwd": "packages/cli",
-                "command": "./mutube"
+                "command": "./packages/cli/mutube"
             }
         },
         "test": {
             "executor": "nx:run-commands",
             "options": {
-                "cwd": "packages/cli",
-                "command": "./test.sh"
+                "command": "SCRIPT_DIR='./packages/cli' c8 --report-dir='./coverage/cli' bats ./packages/cli/tests/*.bats"
             }
         }
     }

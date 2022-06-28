@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 .direnv
+.nyc_output
