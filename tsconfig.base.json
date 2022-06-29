@@ -6,6 +6,7 @@
         "baseUrl": "./packages",
         "module": "ES2022",
         "outDir": "dist",
+        "moduleResolution": "node",
         "paths": {
             "@/*": [
                 "*"
@@ -13,10 +14,11 @@
         },
         "strict": false
     },
+    "include": [
+        "packages/**/*.ts",
+        "packages/**/*.js"
+    ],
     "exclude": [
         "node_modules"
-    ],
-    "include": [
-        "packages/**/*"
     ]
 }

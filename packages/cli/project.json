@@ -22,6 +22,15 @@
             "options": {
                 "command": "SCRIPT_DIR='./packages/cli' c8 --report-dir='./coverage/cli' bats ./packages/cli/tests/*.bats"
             }
+        },
+        "coverage-report": {
+            "dependsOn": [
+                "test"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npx nyc merge ./coverage/cli ./coverage/coverage-final.json"
+            }
         }
     }
 }

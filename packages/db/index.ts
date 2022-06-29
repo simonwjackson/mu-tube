@@ -32,3 +32,7 @@ export default async (path: string) => {
 
   return db
 }
+
+export const calc2 = () => {
+  return 4
+}

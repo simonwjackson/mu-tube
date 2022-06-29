@@ -1,6 +1,6 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "projectType": "application",
+    "projectType": "library",
     "sourceRoot": "packages/db",
     "name": "db",
     "targets": {
@@ -11,11 +11,19 @@
                 "command": "tsc --project ."
             }
         },
-        "run": {
+        "test": {
             "executor": "nx:run-commands",
             "options": {
-                "cwd": "packages/db",
-                "command": "node --experimental-specifier-resolution=node --loader ./loader.js index.ts"
+                "command": "c8 --report-dir ./coverage/db jest --config ./packages/db/jest.config.ts"
+            }
+        },
+        "coverage-report": {
+            "dependsOn": [
+                "test"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npx nyc merge ./coverage/db ./coverage/coverage-final.json"
             }
         }
     }
