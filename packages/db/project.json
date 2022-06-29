@@ -23,7 +23,11 @@
             ],
             "executor": "nx:run-commands",
             "options": {
-                "command": "npx nyc merge ./coverage/db ./coverage/coverage-final.json"
+                "commands": [
+                    "mkdir -p coverage/projects",
+                    "mv ./coverage/db/coverage-final.json ./coverage/projects/db.json",
+                    "nyc merge ./coverage/projects ./coverage/coverage-final.json"
+                ]
             }
         }
     }
