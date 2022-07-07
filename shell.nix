@@ -72,7 +72,6 @@ pkgs.mkShell {
     ${osShellHook}
 
     yarn install
-    nx reset
   '';
 }
 
